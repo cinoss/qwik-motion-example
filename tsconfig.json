@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "incremental": true,
     "isolatedModules": true,
-    "types": ["node", "vite/client", "@builder.io/qwik/jsx-runtime.d.ts"],
+    "types": ["node", "vite/client"],
     "paths": {
       "~/*": ["./src/*"]
     }
