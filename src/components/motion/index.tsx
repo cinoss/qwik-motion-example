@@ -5,7 +5,7 @@ import {
   useRef,
   useStore,
 } from "@builder.io/qwik";
-import equal from "deep-equal";
+import equal from "lodash-es/isEqual";
 import {
   animate,
   anticipate,
