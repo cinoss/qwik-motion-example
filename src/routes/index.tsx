@@ -13,7 +13,7 @@ export default component$(() => {
 
   const isOpen = useStore({ value: false });
   return (
-    <>
+    <div class="main">
       <motion.div
         class="box"
         animate={mutable({
@@ -56,7 +56,7 @@ export default component$(() => {
         whileHover={mutable({ scale: 1.2, backgroundColor: "#f00" })}
         whileTap={mutable({ scale: 0.8, backgroundColor: "#0f0" })}
       />
-    </>
+    </div>
   );
 });
 

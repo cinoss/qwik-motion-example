@@ -5,3 +5,8 @@
     margin: 100px;
     display: inline-block;
 }
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
