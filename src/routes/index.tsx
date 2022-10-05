@@ -55,6 +55,7 @@ export default component$(() => {
         class="box"
         whileHover={mutable({ scale: 1.2, backgroundColor: "#f00" })}
         whileTap={mutable({ scale: 0.8, backgroundColor: "#0f0" })}
+        transition={mutable({ type: "spring", stiffness: 400, damping: 17 })}
       >
         Click Me
       </motion.div>

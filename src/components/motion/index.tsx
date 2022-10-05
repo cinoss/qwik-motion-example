@@ -20,6 +20,7 @@ import {
   easeInOut,
   easeOut,
   linear,
+  PhysicsSpringOptions,
 } from "popmotion";
 import type { Easing } from "popmotion/lib/easing/types";
 
@@ -186,7 +187,8 @@ export const DEFAULT: StyleState = {
   rotate: 0,
 };
 
-export interface Transtition {
+export interface Transtition extends PhysicsSpringOptions {
+  type?: "spring" | "decay" | "keyframes";
   duration?: number;
   ease?: EasingName;
   times?: number[];
@@ -305,6 +307,7 @@ export const Div = component$(
           const { stop } = animate({
             from,
             to,
+            ...transition,
             offset: transition?.times,
             ease: transition?.ease && easingFunctions[transition?.ease],
             duration: transition?.duration && transition?.duration * 1000,
