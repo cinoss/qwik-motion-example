@@ -5,7 +5,7 @@ import {
   useRef,
   useStore,
 } from "@builder.io/qwik";
-import isEqual from "lodash-es/isEqual";
+import equal from "deep-equal";
 import {
   animate,
   anticipate,
@@ -250,7 +250,7 @@ export const Div = component$(
     });
     useClientEffect$(({ track }) => {
       track(props, "animate");
-      if (!isEqual(props.animate, state.animate)) {
+      if (!equal(props.animate, state.animate)) {
         console.debug("animate updated", props.animate, state.animate);
         state.animate = props.animate;
       }

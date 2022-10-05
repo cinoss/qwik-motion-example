@@ -25,6 +25,7 @@
     "@builder.io/qwik": "0.9.0",
     "@builder.io/qwik-city": "0.0.111",
     "@netlify/vite-plugin-netlify-edge": "1.1.0",
+    "@types/deep-equal": "^1.0.1",
     "@types/eslint": "8.4.6",
     "@types/lodash": "^4.14.186",
     "@types/lodash-es": "^4.17.6",
@@ -40,6 +41,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "deep-equal": "^2.0.5",
     "immutability-helper": "^3.1.1",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

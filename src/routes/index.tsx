@@ -55,7 +55,9 @@ export default component$(() => {
         class="box"
         whileHover={mutable({ scale: 1.2, backgroundColor: "#f00" })}
         whileTap={mutable({ scale: 0.8, backgroundColor: "#0f0" })}
-      />
+      >
+        Click Me
+      </motion.div>
     </div>
   );
 });

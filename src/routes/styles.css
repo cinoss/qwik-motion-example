@@ -3,7 +3,9 @@
     width: 200px;
     background-color: var(--qwik-dark-blue);
     margin: 100px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main {
     display: flex;
