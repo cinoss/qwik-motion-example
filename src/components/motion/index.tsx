@@ -243,7 +243,7 @@ export const Div = component$(
     );
     const ref = useRef();
     useClientEffect$(({ track }) => {
-      track(ref, "current");
+      track(() => ref.current);
       if (ref.current) {
         state.initialDomStyle = extractFromComputedStyled(
           getComputedStyle(ref.current)
@@ -251,7 +251,7 @@ export const Div = component$(
       }
     });
     useClientEffect$(({ track }) => {
-      track(props, "animate");
+      track(() => props.animate);
       if (!equal(props.animate, state.animate)) {
         console.debug("animate updated", props.animate, state.animate);
         state.animate = props.animate;
@@ -259,10 +259,10 @@ export const Div = component$(
     });
     useClientEffect$(
       ({ cleanup, track }) => {
-        track(state, "animate");
-        // track(props, "animate");
-        track(state, "hover");
-        track(state, "tap");
+        track(() => state.animate);
+        // track(() => props.animate);
+        track(() => state.hover);
+        track(() => state.tap);
         const target =
           (state.tap && props.whileTap) ||
           (state.hover && props.whileHover) ||
@@ -362,7 +362,7 @@ export const Div = component$(
           state.tap = false;
           state.tapUpdated = true;
         }}
-        class={props.class}
+        className={props.class} // it's reallt strange that class will cause error
         style={getStyle(state.style)}
       >
         <Slot />

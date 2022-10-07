@@ -1,4 +1,4 @@
-import { component$, mutable, useStore, useStyles$ } from "@builder.io/qwik";
+import { component$, useStore, useStyles$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
 import motion from "~/components/motion";
 import styles from "./styles.css?inline";
@@ -16,26 +16,25 @@ export default component$(() => {
     <div class="main">
       <motion.div
         class="box"
-        animate={mutable({
+        animate={{
           scale: [1, 2, 2, 1, 1],
           rotate: [0, 0, 180, 180, 0],
           borderRadius: ["25%", "0%", "50%", "50%", "25%"],
           // borderRadius: ["0%", "50%"],
-        })}
-        transition={mutable({
+        }}
+        transition={{
           duration: 2,
           ease: "easeInOut",
           times: [0, 0.2, 0.5, 0.8, 1],
-          // repeat: Infinity,
-          repeat: 1000,
+          repeat: Infinity,
           repeatDelay: 1,
-        })}
+        }}
       />
       <motion.div
         class="box"
-        initial={mutable({ opacity: 0, scale: 0.5 })}
-        animate={mutable({ opacity: 1, scale: 1 })}
-        transition={mutable({ duration: 0.5 })}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
       />
       <div>
         <div>
@@ -46,16 +45,16 @@ export default component$(() => {
         </div>
         <motion.div
           class="box"
-          animate={mutable(isOpen.value ? "open" : "closed")}
-          variants={mutable(variants)}
+          animate={isOpen.value ? "open" : "closed"}
+          variants={variants}
         />
       </div>
 
       <motion.div
         class="box"
-        whileHover={mutable({ scale: 1.2, backgroundColor: "#f00" })}
-        whileTap={mutable({ scale: 0.8, backgroundColor: "#0f0" })}
-        transition={mutable({ type: "spring", stiffness: 400, damping: 17 })}
+        whileHover={{ scale: 1.2, backgroundColor: "#f00" }}
+        whileTap={{ scale: 0.8, backgroundColor: "#0f0" }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         Click Me
       </motion.div>
